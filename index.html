@@ -1,1 +1,29 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cash Clicker 💰</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Cash Clicker</h1>
+    <div id="money">Money: $0</div>
+    <button id="clicker">💵 Click to Earn</button>
+    <div class="upgrades">
+      <h2>Upgrades</h2>
+      <div class="upgrade-item">
+        <button id="buy-auto">🤖 Buy Auto-Income</button>
+        <span id="auto-desc">Cost: $50 | You own: 0</span>
+      </div>
+      <div class="upgrade-item">
+        <button id="buy-mult">📈 Buy Multiplier</button>
+        <span id="mult-desc">Cost: $100 | Multiplier: x1</span>
+      </div>
+    </div>
+  </div>
+  <audio id="click-sound" src="click.wav"></audio>
+  <audio id="buy-sound" src="buy.wav"></audio>
+  <script src="main.js"></script>
+</body>
+</html>
