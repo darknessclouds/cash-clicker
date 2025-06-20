@@ -9,9 +9,6 @@ const buyMultBtn = document.getElementById("buy-mult");
 const autoDesc = document.getElementById("auto-desc");
 const multDesc = document.getElementById("mult-desc");
 
-const clickSound = document.getElementById("click-sound");
-const buySound = document.getElementById("buy-sound");
-
 const AUTO_BASE = 50;
 const MULT_BASE = 100;
 
@@ -36,8 +33,6 @@ function updateUI() {
 
 clickBtn.addEventListener("click", () => {
   money += mult;
-  clickSound.currentTime = 0;
-  clickSound.play();
   updateUI();
   save();
 });
@@ -47,8 +42,6 @@ buyAutoBtn.addEventListener("click", () => {
   if (money >= cost) {
     money -= cost;
     autoCount++;
-    buySound.currentTime = 0;
-    buySound.play();
     updateUI();
     save();
   } else alert("Not enough money!");
@@ -59,14 +52,12 @@ buyMultBtn.addEventListener("click", () => {
   if (money >= cost) {
     money -= cost;
     mult++;
-    buySound.currentTime = 0;
-    buySound.play();
     updateUI();
     save();
   } else alert("Not enough money!");
 });
 
-// Auto income per second
+// Auto income loop
 setInterval(() => {
   money += autoCount;
   updateUI();
